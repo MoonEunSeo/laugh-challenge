@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///workspace/AI_emotion_browser/pages/index.js"],"sourcesContent":["export default function Home() {\n  return <h1>Hello Next.js!</h1>;\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,qKAAC;kBAAG;;;;;;AACb"}}]
-}
