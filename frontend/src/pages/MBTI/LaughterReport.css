@@ -1,0 +1,314 @@
+/* 폰트 로드 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --bg-gradient-start: #fdfbfb;
+    --bg-gradient-end: #ebedee;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --text-main: #2d3436;
+    --text-sub: #636e72;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.report-container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Recharts 오류 방지 */
+    min-width: 0;
+    min-height: 0;
+}
+
+/* 글래스 패널 */
+.glass-panel {
+    max-width: 1000px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+
+    /* Recharts 오류 방지 */
+    min-width: 0;
+    min-height: 0;
+}
+
+/* 헤더 */
+.report-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.report-header h1 {
+    color: var(--text-main);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.report-header .subtitle {
+    color: var(--text-sub);
+    font-size: 1.1rem;
+}
+
+/* 그리드 */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    /* Recharts 오류 방지 */
+    min-width: 0;
+    min-height: 0;
+}
+
+/* 카드 공통 */
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    /* Recharts 오류 방지 */
+    min-width: 0;
+    min-height: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon {
+    color: var(--primary-color);
+}
+
+/* 결과 카드 */
+.result-card {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #ffffff 0%, #fff0f0 100%);
+    text-align: center;
+    border-left: 5px solid var(--primary-color);
+}
+
+.result-card .badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.result-card h2 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin: 10px 0;
+}
+
+.result-card .description {
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    margin-bottom: 20px;
+    white-space: pre-line;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+
+    min-width: 0;
+    min-height: 0;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-sub);
+}
+
+.stat-item strong {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* ✨ 여기 중요! — 차트 래퍼 수정 */
+.chart-wrapper {
+    width: 100%;
+    height: 250px;
+    min-height: 250px;       /* 🔥 핵심: Recharts가 높이 계산 가능 */
+    min-width: 0;            /* 🔥 flex/grid width 문제 방지 */
+    overflow: hidden;        /* (-1px) 보정 */
+}
+
+/* 최고의 순간 카드 */
+.best-moment-card {
+    background: #fff;
+}
+
+.moment-content {
+    text-align: center;
+}
+
+.time-badge {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.moment-desc {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.happiness-meter .label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--text-sub);
+}
+
+.happiness-meter .score {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FF9A9E, #FECFEF);
+    transition: width 1s ease-in-out;
+}
+
+.comment {
+    margin-top: 15px;
+    color: #888;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* 추천 카드 */
+.recommend-card {
+    border: none;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.recommend-card.clickable-card {
+    background: linear-gradient(135deg, #4ECDC4, #556270);
+    box-shadow: 0 4px 15px rgba(78,205,196,0.4);
+}
+
+.recommend-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(78,205,196,0.6);
+}
+
+.recommend-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    color: white;
+
+    min-width: 0;
+}
+
+.recommend-text h3 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.recommend-text p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.9);
+}
+
+.icon-white {
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.arrow-box {
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.recommend-card:hover .arrow-box {
+    transform: translateX(5px);
+    background: rgba(255,255,255,0.3);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glass-panel {
+        padding: 20px;
+    }
+
+    .result-card h2 {
+        font-size: 2rem;
+    }
+
+    .recommend-content {
+        padding: 30px;
+    }
+
+    .recommend-text h3 {
+        font-size: 1.3rem;
+    }
+}
