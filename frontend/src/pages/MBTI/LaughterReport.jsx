@@ -195,10 +195,7 @@ const LaughterReport = () => {
                   <Zap size={20} />
                   <span>반응 태그 <strong>{analysis.topTag}</strong></span>
                 </div>
-                <div className="stat-item">
-                  <Smile size={20} />
-                  <span>평균 강도 <strong>{analysis.avgIntensity}%</strong></span>
-                </div>
+                
               </div>
             </div>
 
